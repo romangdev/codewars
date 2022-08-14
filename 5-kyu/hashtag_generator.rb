@@ -11,14 +11,12 @@
 def generateHashtag(str)
   return false if str.empty?
 
-  str = str.split(" ").map do |word|
-    word.capitalize
-  end
+  str = str.split(" ").map(&:capitalize)
   str = str.unshift("#").join
   return false if str.length > 140
 
-  puts str
+  str
 end
 
-# should be "#HelloThere"
+# should return "#HelloThere"
 generateHashtag(" Hello there  ")
